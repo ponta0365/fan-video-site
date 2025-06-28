@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>限定動画視聴ページ</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #login, #viewer { display: none; }
+    input[type="password"] {
+      padding: 8px;
+      font-size: 1em;
+    }
+    button {
+      padding: 8px 16px;
+      font-size: 1em;
+      margin-left: 8px;
+    }
+  </style>
+</head>
+<body>
+
+<h2>🎥 限定動画ページ 🎥</h2>
+
+<div id="login">
+  <p>パスワードを入力してください：</p>
+  <input type="password" id="password">
+  <button onclick="checkPassword()">ログイン</button>
+</div>
+
+<div id="viewer">
+  <h3>限定動画をお楽しみください</h3>
+  <iframe src="https://drive.google.com/file/d/1QLOY-8MyvT7oadCQEJ2T--QBouHk9DNv/preview"
+          width="800" height="450" allow="autoplay"></iframe>
+  <p style="margin-top: 20px;">
+    <a href="https://drive.google.com/drive/folders/1916qD4SN577CZ3fwKvB_jjDLNxbwj0FY?usp=sharing" target="_blank">
+      他の動画フォルダを見る（別ウィンドウで開く）
+    </a>
+  </p>
+</div>
+
+<script>
+  const correctPassword = "twitchfan"; // 任意のパスワードに変更可
+  document.getElementById("login").style.display = "block";
+
+  function checkPassword() {
+    const input = document.getElementById("password").value;
+    if (input === correctPassword) {
+      document.getElementById("login").style.display = "none";
+      document.getElementById("viewer").style.display = "block";
+    } else {
+      alert("パスワードが違います。Discordで確認してください。");
+    }
+  }
+</script>
+
+</body>
+</html>
